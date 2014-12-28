@@ -4,7 +4,7 @@
         <div class="panel-header">
             <div class="btn-group" role="group" aria-label="Choose between adding a product or JTBD">
                 <button ng-model="addProduct" ng-click="addProduct=true;addJtbd=false;" type="button" class="btn btn-default">Product</button>
-                <button ng-model="addJtbd" ng-click="addProduct=false;addJtbd=true;" type="button" class="btn btn-default">JTBD</button>
+                <button ng-disabled="!productsList.length" ng-model="addJtbd" ng-click="addProduct=false;addJtbd=true;" type="button" class="btn btn-default">JTBD</button>
             </div>
         </div>
         <div class="panel-body">
@@ -25,22 +25,30 @@
         <div class="panel-body">
             <div class="panel-body">
                 <table class="table table-striped">
-                    <th colspan="3">Products</th>
-                    <tr ng-repeat="list in [1,2,3,4,5] | filter: filterText">
-                        <td>list of products</td>
-                        <td>Product #{{list}}</td>
+                    <th colspan="6">Products</th>
+                    <tr ng-repeat="product in productList | filter: filterText">
+                        <td>{{product.id}}</td>
+                        <td>{{product.title}}</td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.priority}}</td>
+                        <td><button class="btn btn-warning">edit</button></td>
                         <td><button class="btn btn-danger">delete</button></td>
                     </tr>
+                    <tr ng-if="!productList.length" ><td colspan="4">No results found. You may wish to add one above.</td></tr>
                 </table>
             </div>
             <div class="panel-body">
                 <table class="table table-striped">
-                    <th colspan="3">Jobs to be Done</th>
-                    <tr ng-repeat="list in [1,2,3,4,5] | filter: filterText">
-                        <td>list of JTBD</td>
-                        <td>JTBD #{{list}}</td>
+                    <th colspan="6">Jobs to be Done</th>
+                    <tr ng-repeat="jtbd in jtbdList | filter: filterText">
+                        <td>{{jtbd.id}}</td>
+                        <td>{{jtbd.title}}</td>
+                        <td>{{jtbd.description}}</td>
+                        <td>{{jtbd.priority}}</td>
+                        <td><button class="btn btn-warning">edit</button></td>
                         <td><button class="btn btn-danger">delete</button></td>
                     </tr>
+                    <tr ng-if="!jtbdList.length" ><td colspan="4">No results found. You may wish to add one above.</td></tr>
                 </table>
             </div>
         </div>
