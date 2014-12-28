@@ -1,4 +1,3 @@
-<h4>Edit.</h4>
 <div>
     <div class="panel pandel-default">
         <div class="panel-header">
@@ -26,7 +25,7 @@
             <div class="panel-body">
                 <table class="table table-striped">
                     <th colspan="6">Products</th>
-                    <tr ng-repeat="product in productList | filter: filterText">
+                    <tr ng-repeat="product in productList | filter: filterText | orderBy: product.title">
                         <td>{{product.id}}</td>
                         <td>{{product.title}}</td>
                         <td>{{product.description}}</td>
@@ -39,11 +38,12 @@
             </div>
             <div class="panel-body">
                 <table class="table table-striped">
-                    <th colspan="6">Jobs to be Done</th>
-                    <tr ng-repeat="jtbd in jtbdList | filter: filterText">
+                    <th colspan="7">Jobs to be Done</th>
+                    <tr ng-repeat="jtbd in jtbdList | filter: filterText | orderBy: jtbd.product">
                         <td>{{jtbd.id}}</td>
                         <td>{{jtbd.title}}</td>
                         <td>{{jtbd.description}}</td>
+                        <td>{{jtbd.product}}</td>
                         <td>{{jtbd.priority}}</td>
                         <td><button class="btn btn-warning">edit</button></td>
                         <td><button class="btn btn-danger">delete</button></td>

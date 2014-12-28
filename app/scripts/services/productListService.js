@@ -9,20 +9,22 @@
  */
 angular.module('jtbdApp')
 .service( 'productListService', [function(){
-    var productList = [];
+    this.productList = [];
     
+	this.all = function(){ return this.productList; };
+	
     //add a product to the list
-    var add = function( product ){
+    this.add = function( product ){
         
         if( product.title == '' ){
             throw Error( "There is not a title for this product." );
         }
         
-        productList.push( product );
+        this.productList.push( product );
     };
     
     //remove a product from the list
-    var remove = function( productId ){
-        _.remove( productList, productId );
+    this.remove = function( productId ){
+        _.remove( this.productList, productId );
     };
 }] );

@@ -9,18 +9,20 @@
  */
 angular.module('jtbdApp')
 .service( 'jtbdListService', [ function(){
-    var jtbdList = [];
+    this.jtbdList = [];
     
-    var add = function( job ){
+	this.all = function(){ return this.jtbdList; };
+	
+    this.add = function( job ){
         
         if( job.title == '' || job.productId == '' ){
             throw Error( "There is not a title or product for this Job to be Done." );
         }
         
-        jtbdList.push( job );
+        this.jtbdList.push( job );
     };
     
-    var remove = function( jobId ){
+    this.remove = function( jobId ){
         //TODO: work will need to be done here to repair tree upon removal of a node
     };
 }] );

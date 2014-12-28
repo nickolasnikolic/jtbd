@@ -9,7 +9,9 @@
  */
 angular.module('jtbdApp')
 .factory( 'productFactory', [function(){
-      
+    
+	var bullet = {};
+	
     var productTemplate = {
         id: '',
         title: '',
@@ -18,21 +20,22 @@ angular.module('jtbdApp')
         alternates: []
     };
     
-    var productList = [];
+    bullet.productList = [];
     
     //instantiate a new product
-    var createProduct = function( title, discription, priority, alternates ){
-        this.description = description;
-        this.priority = priority;
-        this.alternates = alternates;
+    bullet.createProduct = function( title, discription, priority, alternates ){
+        this.title = title;
+        this.description = description || '';
+        this.priority = priority || 0;
+        this.alternates = alternates || [];
         
-        productList.push( this );
+        add( this );
         
         return this;
     };
     
     //add a product to the list
-    var add = function( product ){
+    bullet.add = function( product ){
         
         if( product.title == '' ){
             throw Error( "There is not a title for this product." );
@@ -42,19 +45,22 @@ angular.module('jtbdApp')
     };
     
     //remove a product from the list
-    var remove = function( productId ){
+    bullet.remove = function( productId ){
         _.remove( productList, productId );
     };
     
-    var setPriority = function( index, priority ){
+    bullet.setPriority = function( index, priority ){
         productList[ index ].priority = priority;
     };
     
-    var addAlternate = function( index, alternate ){
+    bullet.addAlternate = function( index, alternate ){
         productList[ index ].alternates.push( alternate );
     };
     
-    var removeAlternate = function( index, alternateId ){
+    bullet.removeAlternate = function( index, alternateId ){
         _.remove( productList[ index ].alternates, alternateId );
     };
+    
+    return bullet;
+    
 }] );

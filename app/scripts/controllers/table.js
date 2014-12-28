@@ -9,7 +9,11 @@
  * Controller of the jtbdApp
  */
 angular.module('jtbdApp')
-  .controller('TableCtrl', function ($scope) {
+  .controller('TableCtrl', [
+	'$scope', 
+    'productsListService', 
+    'jtbdListService', 
+    function ( $scope, productsListService, jtbdListService ) {
     $scope.tableLocation = true;
     $scope.editLocation = $scope.mainLocation = false;
     $scope.rows = [
@@ -18,4 +22,4 @@ angular.module('jtbdApp')
         ['cell11', 'cell12', 'cell13', 'cell14', 'cell15'],
         ['cell16', 'cell17', 'cell18', 'cell19', 'cell20'],
     ];
-  });
+  }]);

@@ -8,7 +8,11 @@
  * Controller of the jtbdApp
  */
 angular.module('jtbdApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', [ 
+	'$scope',
+    'productListService', 
+    'jtbdListService', 
+    function ($scope, productListService, jtbdListService ) {
     $scope.mainLocation = true;
     $scope.editLocation = $scope.tableLocation = false;
     $scope.awesomeThings = [
@@ -17,4 +21,4 @@ angular.module('jtbdApp')
       'Karma',
         "just another list item"
     ];
-  });
+  }]);

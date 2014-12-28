@@ -8,8 +8,8 @@
  * Service and model of the jtbdApp
  */
 angular.module('jtbdApp')
-.factory( 'jtbdFactory', [ function(){
-        
+.factory( 'jtbdFactory', [function(){
+	var bullet = {};
     var jbtdTemplate = { 
         id: '',
         productId: '',
@@ -26,19 +26,21 @@ angular.module('jtbdApp')
                 personal: false,
                 social: false
             }
-            
+
         }
     };
-    
-    var createJob = function( title, description, type, alternates ){
+
+    bullet.createJob = function( title, description, type, alternates ){
+        if( title == null ) return {};
+
         this.title = title;
         this.description = description;
         this.type = setJtbdType( type );
         this.alternates = setAlternates( alternates );
-        
+
         return this;
     };
-    
+
     //privatish functions
     function addParent( parent ){
         this.parents.push( parent );
@@ -87,4 +89,6 @@ angular.module('jtbdApp')
                     this.type.functional = true;
         }
     }
+    
+    return bullet;
 }] );
