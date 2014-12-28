@@ -15,6 +15,7 @@ angular.module('jtbdApp')
         productId: '',
         title: '',
         description: '',
+        priority: '',
         parents: [],
         children: [],
         related: [],
