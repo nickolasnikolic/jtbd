@@ -1,7 +1,11 @@
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #fffefe;
+    background-image: url( ../images/symphony.png );
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

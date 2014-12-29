@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Jobs to be Done Web app</title>
-    <meta name="description" content="">
+    <meta name="description" content="A small web app for compiling Jobs to be Done (JTBD).">
     <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="images/favicon.png"> 
     <link rel="stylesheet" href="scripts/vendor/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="scripts/vendor/bootstrap/css/bootstrap-theme.css">
     <link rel="stylesheet" href="scripts/vendor/jquery/jquery-ui-1.11.2/jquery-ui.css">
     <link rel="stylesheet" href="scripts/vendor/tree/fancytree/dist/skin-bootstrap-n/ui.fancytree.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body ng-app="jtbdApp">
+  <body ng-app="jtbdApp" class="tk-foco">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -20,17 +21,20 @@
     <div class="container">
       <div class="header">
             <ul class="nav navbar nav-pills pull-right">
-                <li ng-class="{active: mainLocation}"><a ng-href="#/">Tree View</a></li>
+                <li ng-class="{active: mainLocation}"><a ng-href="#/">Home</a></li>
+                <!--<li ng-class="{active: treeLocation}"><a ng-href="#/">Tree View</a></li>-->
                 <li ng-class="{active: tableLocation}"><a ng-href="#/table">Table View</a></li>
                 <li ng-class="{active: editLocation}"><a ng-href="#/edit">Edit</a></li>
             </ul>
-            <h3 class="text-muted">Jobs to be Done web app</h3>
+          <div><img src="images/jtbd-logo-web.png" alt="logo (link to home)" class="logo-main" width="200px" /></div>
+          <h3 class="text-muted">A Jobs-to-be-Done web app</h3>
         </div>
+        <div>
         <div id="mainViewPane">
             <div ng-view=""></div>
         </div>
         <div class="footer">
-            <p>This is a small web app for compiling lists of Jobs to be Done.</p>
+            <p><img src="images/favicon.png" alt="" width="50px" />&nbsp;A small web app for compiling Jobs-to-be-Done.</p>
         </div>
     </div>
 
@@ -81,6 +85,8 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/edit.js"></script>
         <script src="scripts/controllers/table.js"></script>
+        <script src="//use.typekit.net/krt8vnr.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
         <!-- endbuild -->
 </body>
 </html>
