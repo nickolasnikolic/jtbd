@@ -10,10 +10,14 @@
  */
 angular.module('jtbdApp')
   .controller('TableCtrl', [
-	'$scope', 
-    'productsListService', 
-    'jtbdListService', 
-    function ( $scope, productsListService, jtbdListService ) {
+							'$scope', 
+							'productsListService', 
+							'jtbdListService', 
+							function ( 
+									$scope, 
+									 productsListService, 
+									 jtbdListService 
+									) {
     $scope.tableLocation = true;
     $scope.editLocation = $scope.mainLocation = false;
     $scope.rows = [

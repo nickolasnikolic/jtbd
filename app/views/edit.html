@@ -3,7 +3,7 @@
         <div class="panel-header">
             <div class="btn-group" role="group" aria-label="Choose between adding a product or JTBD">
                 <button ng-model="addProduct" ng-init="addingProduct=false;addingJtbd=false;" ng-click="addingProduct=true;addingJtbd=false;" type="button" class="btn btn-default">Product</button>
-                <button ng-disabled="!productsList.length" ng-model="addingJtbd" ng-click="addingProduct=false;addingJtbd=true;" type="button" class="btn btn-default">JTBD</button>
+                <button ng-disabled="jobsDisabled" ng-model="addingJtbd" ng-click="addingProduct=false;addingJtbd=true;" type="button" class="btn btn-default">JTBD</button>
             </div>
         </div>
         <div class="panel-body">
@@ -25,8 +25,8 @@
             <div class="panel-body">
                 <table class="table table-striped">
                     <th colspan="6">Products</th>
-                    <tr ng-repeat="product in productList | filter: filterText">
-                        <td>{{$index}}</td>
+                    <tr ng-repeat="product in productList | filter: filterText track by $index">
+                        <td>{{$index+1}}</td>
                         <td>{{product.title}}</td>
                         <td>{{product.description}}</td>
                         <td>{{product.priority}}</td>
@@ -39,7 +39,7 @@
             <div class="panel-body">
                 <table class="table table-striped">
                     <th colspan="7">Jobs to be Done</th>
-                    <tr ng-repeat="job in jtbdList | filter: filterText">
+                    <tr ng-repeat="job in jtbdList | filter: filterText track by $index">
                         <td class="label label-default">{{$index}}</td>
                         <td>{{job.title}}</td>
                         <td>{{job.description}}</td>

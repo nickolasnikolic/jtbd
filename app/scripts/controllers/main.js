@@ -12,7 +12,11 @@ angular.module('jtbdApp')
 	'$scope',
     'productListService', 
     'jtbdListService', 
-    function ($scope, productListService, jtbdListService ) {
+    function (
+			$scope, 
+			 productListService, 
+			 jtbdListService 
+			) {
     $scope.mainLocation = true;
     $scope.editLocation = $scope.tableLocation = false;
     $scope.awesomeThings = [
