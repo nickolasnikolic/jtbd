@@ -1,5 +1,5 @@
 'use strict';
-
+var devMode = true;
 /**
  * @ngdoc function
  * @name jtbdApp.controller:AboutCtrl
@@ -25,17 +25,53 @@ angular.module('jtbdApp')
         $scope.jtbdList = jtbdListService.all();
 
         $scope.addProduct = function( product ){
-			var created = Product.createProduct( 
+			var created = new Product.createProduct( 
 				product.title,
 				product.description,
 				product.priority,
 				[] );
 			productListService.add( created );
 			$scope.jobsDisabled = !productListService.all().length;
-			$scope.$apply();
+			//$scope.$apply();
         };
-					
+        
+        //dummy data
+        if( devMode ){
+            for(var i = 0; i<= 30; i++){
+                productListService.add( new Product.createProduct(
+                    "title: " + Math.floor( i * Math.random() ),
+                    "description: " + Math.floor( i * Math.random() ),
+                    "priority: " + Math.floor( i % 11 * Math.random() ),
+                    []
+                ) );
+            }
+            $scope.jobsDisabled = !productListService.all().length;
+            
+            for(var i = 0; i<= 300; i++){
+                jtbdListService.add( new JTBD.createJob(
+                    "title: " + Math.floor( i * Math.random() ),
+                    "description: " + Math.floor( i * Math.random() ),
+                    Math.floor( i % 3 * Math.random() ),
+                    []
+                ) );
+            }
+        }
+        
         $scope.addJtbd = function( job ){
-            jtbdFactory.add( job );
+            
+            var created = new JTBD.createJob(
+                job.title,
+                job.description,
+                job.type,
+                [] );
+            jtbdListService.add( created );
+            //$scope.$apply();
+        };
+        
+        $scope.removeProduct = function( id ){
+            productListService.remove( id );
+        };
+        $scope.removeJob = function( id ){
+            jtbdListService.remove( id );
         };
   }]);

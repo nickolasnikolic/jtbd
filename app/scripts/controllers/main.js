@@ -19,10 +19,23 @@ angular.module('jtbdApp')
 			) {
     $scope.mainLocation = true;
     $scope.editLocation = $scope.tableLocation = false;
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma',
-        "just another list item"
-    ];
+    //actual data            
+    $scope.productsList = productListService.all();
+    $scope.jobsList = jtbdListService.all();
+    
+    angular.element( document ).ready(function(){
+        jQuery( '#jobsTree' ).fancyTree({source: function(){
+            var productsCount = $scope.productsList.length;
+            var translatedArray = [];
+
+            for( var i = 0; i <= productsCount; i++ ){
+                translatedArray.push({
+                    title: $scope.productsList[ i ].title,
+                    key: i,
+                    lazy: true
+                });
+            }
+            return translatedArray;
+        }});
+    });
   }]);

@@ -15,18 +15,14 @@ angular.module('jtbdApp')
 	
     //add a product to the list
     this.add = function( product ){
-        
         if( product.title == '' ){
             throw Error( "There is not a title for this product." );
         }
-        product.id = increment++;
         productList.push( product );
-		console.log( productList.length );
-		console.log( increment );
     };
     
     //remove a product from the list
     this.remove = function( productId ){
-        _.remove( productList, productId );
+        productList = productList.splice( productId, 1 )
     };
 }] );

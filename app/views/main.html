@@ -1,7 +1,5 @@
 <div class="row marketing">
     <h4>This is the main viewing page.</h4>
-    <p>It is a tree view of your JBTD for your products. Don't see any of either? <a ng-href="#/edit">Add a few</a></p>
-    <div ng-repeat="thing in awesomeThings">
-        <p>{{thing}}</p>
-    </div>
+    <p ng-show="!productsList.length">It is a tree view of your JBTD for your products. Don't see any of either? <a ng-href="#/edit">Add a few</a></p>
+    <div id="jobsTree" ></div>
 </div>

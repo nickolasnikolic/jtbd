@@ -1,32 +1,25 @@
 var JTBD = (function(){
 	var ours = {};
     var jbtdTemplate = { //mostly for documentation
-        id: '',
-        productId: '',
-        title: '',
-        description: '',
-        priority: '',
-        parents: [],
-        children: [],
-        related: [],
-        alternates: [],
-        type: { 
-            functional: false,
-            emotional: {
-                personal: false,
-                social: false
-            }
-
-        }
+            id: '',
+            productId: '',
+            title: '',
+            description: '',
+            priority: '',
+            parents: [],
+            children: [],
+            related: [],
+            alternates: [],
+            type: '' //functional(0), emotional/personal(1), emotional/social(2)
     };
 
-    ours.createJob = function( title, description, type, alternates ){
+    ours.createJob = function( title, description, typeString, alternates ){
         if( title == null ) return Error( 'JTBD creation failed.' );
-
+        var self = this;
         this.title = title;
         this.description = description;
-        this.type = setJtbdType( type );
-        this.alternates = setAlternates( alternates );
+        this.type = setJobType( typeString );
+        this.alternates = [];
 		
 		//privatish functions
 		this.addParent = function( parent ){
@@ -66,18 +59,20 @@ var JTBD = (function(){
 			_.remove( this.alternates, alternateId );
 		}
 		this.setJtbdType = function( typeString ){
-			//defaults to functional
-			switch( typeString ){
-					case 'social':
-						this.type.emotional.social = true;
-					case 'personal':
-						this.type.emotional.personal = true;
-					default:
-						this.type.functional = true;
-			}
+            setJobType( typeString );
 		}
+        function setJobType( typeString ){
+            //defaults to functional (0)
+			switch( typeString ){
+					case 'social' || 2:
+						this.type = 2; //emotional/social
+					case 'personal' || 1:
+						this.type = 1; //emotional/personal
+					default:
+						this.type = 0; //functional
+			}
+        }
         return this;
     };
-	
 	return ours;
 }());

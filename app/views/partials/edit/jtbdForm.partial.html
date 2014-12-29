@@ -1,27 +1,27 @@
 <div>
     <form name="jtbdForm">
         <div class="form-group">
-            <select name="product">
-                <option ng-repeat="val in [1,2,3,4,5,6,7,8,9,10]" value="{{val}}">product #{{val}}</option>
+            <select name="product" ng-model="job.productId">
+                <option ng-repeat="val in productList" value="{{$index}}">{{val.title}}</option>
             </select>
         </div>
         <div class="form-group">
-            <input type="text" name="title" placeholder="title" />
+            <input type="text" name="title" placeholder="title" ng-model="job.title" />
         </div>
         <div class="form-group">
-            <textarea type="text" name="description" placeholder="description" />
+            <textarea type="text" name="description" placeholder="description" ng-model="job.description" />
         </div>
         <div class="form-group">
-            <select name="type">
-                <option value="functional" selected="selected">functional (default)</option>
+            <select name="type" ng-model="job.type">
+                <option value="0" selected="selected">functional (default)</option>
                 <optgroup label="emotional" >
-                    <option value="personal">personal</option>
-                    <option value="social">social</option>
+                    <option value="1">personal</option>
+                    <option value="2">social</option>
                 </optgroup>
             </select>
         </div>
         <div class="form-group">
-            <select name="priority">
+            <select name="priority" ng-model="job.priority">
                 <option value="0">No Priority</option>
                 <option value="1">Low Priority</option>
                 <option value="3">Medium Priority</option>
@@ -30,7 +30,7 @@
             </select>
         </div>
         <div class="form-group">
-            <input type="button" value="add" />
+            <input type="button" value="add" ng-click="addJtbd( job )" />
         </div>
     </form>
 </div>
