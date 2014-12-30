@@ -75,7 +75,9 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">JTBD Web app</h1>
-                        <p class="intro-text">A free web app to compile Jobs-to-be-Done.</p>
+                        <p class="intro-text">A free web app to compile Jobs-to-be-Done for release in mid-2015.</p>
+                        <p>We love JTBDs, and wanted to return some of that love. This is an open source project to allow others to try out JTBD planning with no risk. Much insight.</p>
+                        <p>Check back for more to come in 2015!</p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -90,8 +92,9 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>About jtbd.rocks</h2>
-                <p>jtbd.rocks is a site created to help those that wish to use JTBD in their planning, brainstorming, as well as an easy utility to help fence-sitters (or their bosses) take the first steps.</p>
-                <p>Nothing is sent to us, we also will offer saving to one's own Google Drive account for persistance of your careful planning. Secure and easy.</p>
+                <p>jtbd.rocks is a web app created to help those that wish to use JTBD in their planning, brainstorming, as well as an easy utility to help fence-sitters (or their bosses) take the first steps.</p>
+                <p>Nothing is ever sent to us, soon we also will offer saving to one's own Google Drive account for persistance of your careful planning.</p>
+                <p>Secure and easy.</p>
             </div>
         </div>
     </section>
