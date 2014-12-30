@@ -27,4 +27,11 @@ angular.module('jtbdApp')
         //for now, simply splice it and worry about the binary tree later
         jtbdList = jtbdList.splice( jobId, 1 );
     };
+    
+    this.resetList = function( setArray ){
+        if( !setArray instanceof Array ){ return false };
+        jtbdList = setArray;
+        return true;
+    };
+    
 }] );

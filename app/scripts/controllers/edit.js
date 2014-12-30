@@ -68,10 +68,12 @@ angular.module('jtbdApp')
             //$scope.$apply();
         };
         
-        $scope.removeProduct = function( id ){
-            productListService.remove( id );
+        $scope.removeProduct = function( idIndex ){
+            $scope.productList.splice( idIndex, 1 );
+            productListService.resetList( $scope.productList );
         };
-        $scope.removeJob = function( id ){
-            jtbdListService.remove( id );
+        $scope.removeJob = function( idIndex ){
+            $scope.jtbdList.splice( idIndex, 1 );
+            jtbdListService.resetList( $scope.jtbdList );
         };
   }]);

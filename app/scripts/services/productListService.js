@@ -23,6 +23,13 @@ angular.module('jtbdApp')
     
     //remove a product from the list
     this.remove = function( productId ){
-        productList = productList.splice( productId, 1 )
+        productList = productList.splice( productId, 1 );
     };
+    
+    this.resetList = function( setArray ){
+        if( !setArray instanceof Array ){ return false };
+        productList = setArray;
+        return true;
+    };
+    
 }] );
