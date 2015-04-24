@@ -63,6 +63,14 @@ body {
   margin-top: 28px;
 }
 
+/*table styling for jtbd*/
+.firstOfList{
+	font-weight: bold;
+}
+.tapRight{
+	padding-left: 1em;
+}
+
 /* Breathing room for mainViewPane */
 #mainViewPane{
     margin-bottom: 2em;

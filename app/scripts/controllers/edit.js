@@ -1,5 +1,5 @@
 'use strict';
-var devMode = true;
+var devMode = false;
 /**
  * @ngdoc function
  * @name jtbdApp.controller:AboutCtrl

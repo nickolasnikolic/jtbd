@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-    <h4 class="panel-header">Table View.</h4>
+    <h4 class="panel-header tapRight">Table View.</h4>
     
     <table class="table panel-body">
         <tr ng-repeat="row in rows" >
@@ -7,5 +7,6 @@
 			<td>{{row.description}}</td>
 			<td>{{row.priority}}</td>
         </tr>
+		<tr ng-if="!rows.length" ><td colspan="4">No results found. You may wish to add one on the edit tab.</td></tr>
     </table>
 </div>
