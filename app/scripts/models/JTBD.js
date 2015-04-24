@@ -6,20 +6,21 @@ var JTBD = (function(){
             title: '',
             description: '',
             priority: '',
-            parents: [],
-            children: [],
-            related: [],
-            alternates: [],
+            //parents: [],
+            //children: [],
+            //related: [],
+            //alternates: [],
             type: '' //functional(0), emotional/personal(1), emotional/social(2)
     };
 
-    ours.createJob = function( title, description, typeString, alternates ){
+    ours.createJob = function( title, productId, description, typeString, alternates ){
         if( title == null ) return Error( 'JTBD creation failed.' );
         var self = this;
         this.title = title;
+		this.productId = productId;
         this.description = description;
         this.type = setJobType( typeString );
-        this.alternates = [];
+        //this.alternates = [];
 		
 		//privatish functions
 		this.addParent = function( parent ){

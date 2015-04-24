@@ -21,5 +21,12 @@ angular.module('jtbdApp')
     $scope.tableLocation = true;
     $scope.editLocation = $scope.mainLocation = false;
     
-    $scope.rows = productListService.all();
+	//set rows to be grouped by product sorted by priority
+    //$scope.rows = productListService.all();
+	//var productsList = productListService.all();
+	var jtbdList = jtbdListService.all();
+	
+	var jtbdListGrouped = _.groupBy( jtbdList, 'product' );
+										
+	$scope.rows = jtbdListGrouped;
   }]);

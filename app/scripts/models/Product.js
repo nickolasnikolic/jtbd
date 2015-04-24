@@ -4,15 +4,15 @@ var Product = (function(){
         id: '',
         title: '',
         description: '',
-        priority: '',
-        alternates: []
+        priority: ''//,
+        //alternates: []
     };
     //instantiate a new product
     ours.createProduct = function( title, description, priority, alternates ){
         this.title = title; //fail if not present
         this.description = description || '';
         this.priority = priority || 0;
-        this.alternates = alternates || [];
+        //this.alternates = alternates || [];
         
         return this;
     };

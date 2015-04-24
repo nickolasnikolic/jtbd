@@ -1,5 +1,5 @@
 'use strict';
-var devMode = false;
+var devMode = true;
 /**
  * @ngdoc function
  * @name jtbdApp.controller:AboutCtrl
@@ -28,8 +28,8 @@ angular.module('jtbdApp')
 			var created = new Product.createProduct( 
 				product.title,
 				product.description,
-				product.priority,
-				[] );
+				product.priority//,
+				/*[]*/ );
 			productListService.add( created );
 			$scope.jobsDisabled = !productListService.all().length;
 			//$scope.$apply();
@@ -45,13 +45,16 @@ angular.module('jtbdApp')
                     []
                 ) );
             }
+			
+			var queryList = productListService.all();
             $scope.jobsDisabled = !productListService.all().length;
             
-            for(var i = 0; i<= 300; i++){
+            for(var i = 0; i<= 30; i++){
                 jtbdListService.add( new JTBD.createJob(
                     "title: " + Math.floor( i * Math.random() ),
+					"product: " + queryList[ Math.floor( i*Math.random() ) ],
                     "description: " + Math.floor( i * Math.random() ),
-                    Math.floor( i % 3 * Math.random() ),
+                    "priority: " + Math.floor( i % 3 * Math.random() ),
                     []
                 ) );
             }
@@ -61,9 +64,10 @@ angular.module('jtbdApp')
             
             var created = new JTBD.createJob(
                 job.title,
+				job.productId,
                 job.description,
-                job.type,
-                [] );
+                job.type//,
+                /*[]*/ );
             jtbdListService.add( created );
             //$scope.$apply();
         };

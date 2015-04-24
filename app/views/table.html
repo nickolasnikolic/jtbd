@@ -1,9 +1,10 @@
 <div class="panel panel-default">
     <h4 class="panel-header tapRight">Table View.</h4>
-    
+    <!--<div ng-repeat="row in rows">{{rows}}</div>-->
     <table class="table panel-body">
         <tr ng-repeat="row in rows" >
             <td>{{row.title}}</td>
+			<td>{{row.productId}}</td>
 			<td>{{row.description}}</td>
 			<td>{{row.priority}}</td>
         </tr>
