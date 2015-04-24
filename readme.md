@@ -11,4 +11,3 @@ Currently only a shell. I wouldn't download unless you would like to finish it f
 * Add, edit, or remove Products
 * Add, edit, or remove product JTBD
 * View JTBD in table
-* View JTBD in tree
