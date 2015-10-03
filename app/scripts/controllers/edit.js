@@ -12,7 +12,8 @@ angular.module('jtbdApp')
 				product.title,
 				product.description,
 				product.priority );
-			productListService.add( created );
+			$scope.productList.add( created );
+
 			$scope.jobsDisabled = !productListService.all().length;
         };
         
