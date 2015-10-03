@@ -4,14 +4,14 @@ angular.module('jtbdApp')
 
     dingle.jtbdList = [];
 
-	dingle.all = function(){ return productList; };
+	dingle.all = function(){ return dingle.jtbdList; };
 	
     //add a product to the list
     dingle.add = function( product ){
         if( product.title == '' ){
             throw Error( "There is not a title for this product." );
         }
-        productList.push( product );
+        dingle.jtbdList.push( product );
     };
     
     //remove a product from the list
