@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="scripts/vendor/tree/fancytree/dist/skin-bootstrap-n/ui.fancytree.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body ng-app="jtbdApp" class="tk-foco">
+  <body ng-app="jtbdApp" ng-cloak class="tk-foco">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -37,8 +37,6 @@
         </div>
     </div>
 
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -50,30 +48,15 @@
 
     </script>
 
-    <!-- build:js(.) scripts/oldieshim.js -->
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.js"></script>
-    <![endif]-->
-    <!-- endbuild -->
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
     <script src="scripts/vendor/jquery/jquery-2.1.3.js"></script>
     <script src="scripts/vendor/jquery/jquery-ui-1.11.2/jquery-ui.js"></script>
     <script src="scripts/vendor/angular/angular.js"></script>
     <script src="scripts/vendor/bootstrap/js/bootstrap.js"></script>
-    <script src="scripts/vendor/angular-cookies/angular-cookies.js"></script>
-    <script src="scripts/vendor/angular-messages/angular-messages.js"></script>
-    <script src="scripts/vendor/angular-resource/angular-resource.js"></script>
     <script src="scripts/vendor/angular-route/angular-route.js"></script>
     <script src="scripts/vendor/angular-sanitize/angular-sanitize.js"></script>
-    <script src="scripts/vendor/angular-touch/angular-touch.js"></script>
     <script src="scripts/vendor/underscore/underscore.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
         <script src="scripts/app.js"></script>
 	  	<script src="scripts/models/Product.js"></script>
 	  	<script src="scripts/models/JTBD.js"></script>
@@ -84,6 +67,6 @@
         <script src="scripts/controllers/table.js"></script>
         <script src="//use.typekit.net/krt8vnr.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
-        <!-- endbuild -->
+
 </body>
 </html>

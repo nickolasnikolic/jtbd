@@ -11,8 +11,6 @@
 angular
   .module('jtbdApp',
   [
-    'ngAnimate',
-    'ngAria',
     'ngCookies',
     'ngMessages',
     'ngResource',
