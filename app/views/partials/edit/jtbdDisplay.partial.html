@@ -1,7 +1,7 @@
 <div class="panel-body">
     <table class="table table-striped">
         <th colspan="7">Jobs to be Done</th>
-        <tr ng-repeat="job in jtbdList track by $index | filter: filterText">
+        <tr ng-repeat="job in productList.jtbdList track by $index | filter: filterText">
             <td class="indexOfList">{{$index+1}}</td>
             <td>{{job.title}}</td>
             <td>{{job.description}}</td>
