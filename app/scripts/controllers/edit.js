@@ -16,14 +16,14 @@ angular.module('jtbdApp')
 			$scope.jobsDisabled = !productListService.all().length;
         };
         
-        $scope.addJtbd = function( job ){
+        $scope.addJtbd = function( job, productId ){
             
             var created = new JTBD.createJob(
                 job.title,
-				job.productId,
+				productId,
                 job.description,
                 job.type );
-            product.jtbdList.add( created );
+            $scope.productList[productId].jtbdList.add( created );
         };
         
         $scope.removeProduct = function( idIndex ){
