@@ -5,6 +5,8 @@ angular.module('jtbdApp')
     dingle.jtbdList = [];
 
 	dingle.all = function(){ return dingle.jtbdList; };
+
+    dingle.self = function(){ return dingle; };
 	
     //add a product to the list
     dingle.add = function( product ){

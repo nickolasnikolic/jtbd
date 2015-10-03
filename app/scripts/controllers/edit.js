@@ -4,7 +4,7 @@ angular.module('jtbdApp')
         $scope.mainLocation = $scope.tableLocation = false;
 		$scope.jobsDisabled = true;
 
-        $scope.productList = productListService.all();
+        $scope.productList = productListService.self();
         $scope.productList.jtbdList = jtbdListService.all();
 
         $scope.addProduct = function( product ){
