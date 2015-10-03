@@ -2,7 +2,7 @@
     <form name="jtbdForm">
         <div class="form-group">
             <select name="product" ng-model="job.productId">
-                <option ng-repeat="val in productList" value="{{$index}}">{{val.title}}</option>
+                <option ng-repeat="val in productList.list" value="{{$index}}">{{val.title}}</option>
             </select>
         </div>
         <div class="form-group">
