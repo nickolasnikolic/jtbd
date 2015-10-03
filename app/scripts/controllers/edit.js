@@ -14,7 +14,7 @@ angular.module('jtbdApp')
 				product.priority );
 			$scope.productList.add( created );
 
-			$scope.jobsDisabled = !productListService.all().length;
+			$scope.jobsDisabled = !$scope.productList.list.length;
         };
         
         $scope.addJtbd = function( job, productId ){
