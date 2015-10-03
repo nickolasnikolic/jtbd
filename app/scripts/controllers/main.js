@@ -24,18 +24,6 @@ angular.module('jtbdApp')
     $scope.jobsList = jtbdListService.all();
     
     angular.element( document ).ready(function(){
-        jQuery( '#jobsTree' ).fancyTree({source: function(){
-            var productsCount = $scope.productsList.length;
-            var translatedArray = [];
-
-            for( var i = 0; i <= productsCount; i++ ){
-                translatedArray.push({
-                    title: $scope.productsList[ i ].title,
-                    key: i,
-                    lazy: true
-                });
-            }
-            return translatedArray;
-        }});
+        //anything that needs to run at app start
     });
   }]);
