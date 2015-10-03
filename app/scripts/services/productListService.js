@@ -2,7 +2,8 @@ angular.module('jtbdApp')
 .factory( 'productListService', [function(){
     var dingle = {};
 
-    dingle.jtbdList = [];
+    dingle.list = [];
+    dingle.jtbd
 
 	dingle.all = function(){ return dingle.jtbdList; };
 
@@ -13,7 +14,7 @@ angular.module('jtbdApp')
         if( product.title == '' ){
             throw Error( "There is not a title for this product." );
         }
-        dingle.jtbdList.push( product );
+        dingle.list.push( product );
     };
     
     //remove a product from the list

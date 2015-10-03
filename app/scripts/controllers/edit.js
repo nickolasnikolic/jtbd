@@ -28,10 +28,10 @@ angular.module('jtbdApp')
         };
         
         $scope.removeProduct = function( idIndex ){
-            $scope.productList.splice( idIndex, 1 );
+            $scope.productList.list.splice( idIndex, 1 );
             productListService.resetList( $scope.productList );
         };
         $scope.removeJob = function( productIndex, jobIndex ){
-            $scope.jtbdList.splice( jobIndex, 1 );
+            $scope.productList[productIndex].jtbdList.splice( jobIndex, 1 );
         };
   }]);

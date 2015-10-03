@@ -2,7 +2,7 @@ angular.module('jtbdApp')
 .service( 'jtbdListService', [ function(){
     var jtbdList = [];
 
-    this.product = productId = null;
+    this.product = null;
     
 	this.all = function(){ return jtbdList; };
 	
