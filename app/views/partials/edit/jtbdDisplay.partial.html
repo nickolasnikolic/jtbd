@@ -1,15 +1,17 @@
 <div class="panel-body">
     <table class="table table-striped">
         <th colspan="7">Jobs to be Done</th>
-        <tr ng-repeat="job in productList.jtbdList track by $index | filter: filterText">
-            <td class="indexOfList">{{$index+1}}</td>
-            <td>{{job.title}}</td>
-            <td>{{job.description}}</td>
-            <td>{{job.product}}</td>
-            <td>{{job.priority}}</td>
-            <td><button class="btn btn-warning btn-xs">edit</button></td>
-            <td><button ng-click="removeJob( $index )" class="btn btn-danger btn-xs">delete</button></td>
-        </tr>
-        <tr ng-if="!jtbdList.length" ><td colspan="4">No results found. You may wish to add one above.</td></tr>
+        <div ng-repeat="product in productList">
+            <tr ng-repeat="job in product.jtbdList track by $index | filter: filterText">
+                <td class="indexOfList">{{$index+1}}</td>
+                <td>{{job.title}}</td>
+                <td>{{job.description}}</td>
+                <td>{{job.product}}</td>
+                <td>{{job.priority}}</td>
+                <td><button class="btn btn-warning btn-xs">edit</button></td>
+                <td><button ng-click="removeJob( $index )" class="btn btn-danger btn-xs">delete</button></td>
+            </tr>
+        </div>
+        <tr ng-if="!productList.jtbdList.length" ><td colspan="4">No results found. You may wish to add one above.</td></tr>
     </table>
 </div>
