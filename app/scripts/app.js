@@ -1,19 +1,4 @@
-'use strict';
-
-/**
- * @ngdoc overview
- * @name jtbdApp
- * @description
- * # jtbdApp
- *
- * Main module of the application.
- */
-angular
-  .module('jtbdApp',
-  [
-    'ngRoute',
-    'ngSanitize'
-  ])
+angular.module('jtbdApp', [ 'ngRoute', 'ngSanitize' ])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {

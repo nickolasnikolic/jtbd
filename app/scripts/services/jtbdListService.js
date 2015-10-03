@@ -1,15 +1,8 @@
-'use strict';
-
-/**
- * @ngdoc Service
- * @name jtbdApp.service:jtbdSrvc
- * @description
- * # This is the main service and main model of the app
- * Service and model of the jtbdApp
- */
 angular.module('jtbdApp')
 .service( 'jtbdListService', [ function(){
     var jtbdList = [];
+
+    this.product = productId;
     
 	this.all = function(){ return jtbdList; };
 	
