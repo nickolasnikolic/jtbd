@@ -95,7 +95,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>About jtbd.rocks</h2>
                 <p>jtbd.rocks is a web app created to help those that wish to use JTBD in their planning, brainstorming, as well as an easy utility to help fence-sitters (or their bosses) take the first steps.</p>
-                <p>Nothing is ever sent to us, soon we also will offer saving to one's own Google Drive account for persistance of your careful planning.</p>
+                <p>Nothing is ever sent to us, soon we also will offer saving to one's own Google Drive account for persistence of your careful planning.</p>
                 <p>Secure and easy.</p>
             </div>
         </div>
@@ -108,7 +108,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Preview jtbd.rocks as we work!</h2>
                     <p>You can play with jtbd.rocks as we work.</p>
-                    <a href="app/" class="btn btn-default btn-lg">Visit the app!</a>
+                    <a href="/app/" class="btn btn-default btn-lg">Visit the app!</a>
                     <p><a href="https://github.com/nickolasnikolic/jtbd/issues">Don't forget to send trouble reports and questions to the project website on GitHub!</a> <a href="https://github.com/nickolasnikolic/jtbd">Or even, gosh, a pull request!</a></p>
                 </div>
             </div>
