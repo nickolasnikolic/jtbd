@@ -1,30 +1,28 @@
 angular.module('jtbdApp')
-.service( 'jtbdListService', [ function(){
+.factory( 'jtbdListService', [ function(){
+    var dingle = {};
     var jtbdList = [];
 
-    this.product = null;
-    
-	this.all = function(){ return jtbdList; };
-	
-    this.add = function( job ){
-        
-        if( job.title == '' || job.productId == '' ){
-            throw Error( "There is not a title or product for this Job to be Done." );
-        }
-        
-        jtbdList.push( job );
+    dingle.product = null;
+
+    dingle.all = function () {
+        return jtbdList;
     };
-    
-    this.remove = function( jobId ){
+
+    dingle.add = function (job) {
+
+        if (job.title == '' || job.productId == '') {
+            throw Error("There is not a title or product for this Job to be Done.");
+        }
+
+        jtbdList.push(job);
+    };
+
+    dingle.remove = function (jobId) {
         //TODO: work will need to be done here to repair tree upon removal of a node
         //for now, simply splice it and worry about the binary tree later
-        jtbdList = jtbdList.splice( jobId, 1 );
+        jtbdList = jtbdList.splice(jobId, 1);
     };
-    
-    this.resetList = function( setArray ){
-        if( !setArray instanceof Array ){ return false };
-        jtbdList = setArray;
-        return true;
-    };
-    
+
+    return dingle;
 }] );

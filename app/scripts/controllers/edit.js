@@ -1,37 +1,36 @@
 angular.module('jtbdApp')
-    .controller('EditCtrl', [ '$scope', 'productListService',  'jtbdListService',  function ( $scope, productListService, jtbdListService ){
+    .controller('EditCtrl', [ '$scope', 'productListService', function ( $scope, productListService ){
         $scope.editLocation = true;
         $scope.mainLocation = $scope.tableLocation = false;
-		$scope.jobsDisabled = true;
 
+        //stuff a reference to the productList in local scope
         $scope.productList = productListService.self();
-        $scope.productList.jtbdList = jtbdListService.all();
 
         $scope.addProduct = function( product ){
 			var created = new Product.createProduct( 
-				product.title,
-				product.description,
-				product.priority );
+                                        product.title,
+                                        product.description,
+                                        product.priority );
 			$scope.productList.add( created );
 
 			$scope.jobsDisabled = !$scope.productList.list.length;
         };
         
-        $scope.addJtbd = function( job, productId ){
-            
+        $scope.addJtbd = function( job ){
+
             var created = new JTBD.createJob(
-                job.title,
-				productId,
-                job.description,
-                job.type );
-            $scope.productList[productId].jtbdList.add( created );
+                                            job.title,
+                                            job.productId,
+                                            job.description,
+                                            job.type );
+
+            $scope.productList.addJtbd( created, job.productId );
         };
         
         $scope.removeProduct = function( idIndex ){
             $scope.productList.list.splice( idIndex, 1 );
-            productListService.resetList( $scope.productList );
         };
         $scope.removeJob = function( productIndex, jobIndex ){
-            $scope.productList[productIndex].jtbdList.splice( jobIndex, 1 );
+            $scope.productList.list[productIndex].jtbdList.splice( jobIndex, 1 );
         };
   }]);
